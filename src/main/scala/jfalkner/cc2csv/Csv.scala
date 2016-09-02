@@ -1,5 +1,6 @@
 package jfalkner.cc2csv
 
+import java.nio.file.{Path, Paths}
 import java.time.Instant
 import java.util.UUID
 
@@ -38,6 +39,7 @@ object Csv {
       case (v: String, t) if t =:= typeOf[Boolean] => v.toBoolean
       case (v: String, t) if t =:= typeOf[UUID] => UUID.fromString(v)
       case (v: String, t) if t =:= typeOf[Instant] => Instant.parse(v)
+      case (v: String, t) if t =:= typeOf[Path] => Paths.get(v)
     }.asInstanceOf[Array[Object]]
 
     val at = TermName("apply")
