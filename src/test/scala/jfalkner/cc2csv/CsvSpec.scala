@@ -6,7 +6,7 @@ import org.specs2.mutable.Specification
 import Csv._
 
 /**
-  * Created by jfalkner on 9/1/16.
+  * Tests that the simple example given in the docs works
   */
 class CsvSpec extends Specification {
 

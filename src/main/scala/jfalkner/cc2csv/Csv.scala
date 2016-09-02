@@ -29,7 +29,7 @@ object Csv {
     val modul = claas.companion.asModule
     val im = cm reflect (cm reflectModule modul).instance
 
-    val args = line.split(",").zip(claas.primaryConstructor.asMethod.paramLists.head.map(_.typeSignature)).map{
+    val args = line.split(",", -1).zip(claas.primaryConstructor.asMethod.paramLists.head.map(_.typeSignature)).map{
       case (v: String, t) if t =:= typeOf[String] => v
       case (v: String, t) if t =:= typeOf[Int] => v.toInt
       case (v: String, t) if t =:= typeOf[Long] => v.toLong
