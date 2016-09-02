@@ -28,7 +28,7 @@ trait Csv {
     val claas = cm.classSymbol(t.runtimeClass)
     val modul = claas.companion.asModule
     val im = cm reflect (cm reflectModule modul).instance
-    
+
     val args = line.split(",").zip(claas.primaryConstructor.asMethod.paramLists.head.map(_.typeSignature)).map{
       case (v: String, t) if t =:= typeOf[String] => v
       case (v: String, t) if t =:= typeOf[Int] => v.toInt
