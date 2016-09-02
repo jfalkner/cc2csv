@@ -22,7 +22,7 @@ import scala.reflect.runtime.universe._
   * Don't expect this to work on crazy graphs of objects. Expect it to work on simple case classes that are convenient,
   * typed tuples commonly used in Scala.
   */
-trait Csv {
+object Csv {
 
   def unmarshall[A](line: String)(implicit t: ClassTag[A]): A = {
     val claas = cm.classSymbol(t.runtimeClass)

@@ -3,12 +3,12 @@ package jfalkner.cc2csv
 import java.time.Instant
 
 import org.specs2.mutable.Specification
-
+import Csv._
 
 /**
   * Created by jfalkner on 9/1/16.
   */
-class CsvSpec extends Specification with Csv {
+class CsvSpec extends Specification {
 
   val string = "Bar"
   val int = 123
